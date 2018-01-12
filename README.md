@@ -1,2 +1,2 @@
-# redux-react-image-sharing-app
-An Image Sharing App with editable caption. Used Redux for maintaining state tree and actions dispatch mechanism.
+# redux-image-sharing-app
+An Image Sharing App made with Redux and React. Used Redux for maintaining state tree.
