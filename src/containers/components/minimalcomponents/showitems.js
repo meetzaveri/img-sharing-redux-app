@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ImgContainer from './imgcontainer';
 import Text from './text';
 
 const Wrapper = styled.div`
@@ -26,7 +25,7 @@ class ShowItems extends React.Component{
     }
 
     // componentWillUnmount(){
-    //     this.edittext;
+    //     this.state.newcaption='';
     // }
     // ref={node => {
     //     this.edittext = node
@@ -39,40 +38,40 @@ class ShowItems extends React.Component{
             toggleon,
             contid,
             onSubmitText} = this.props;
-        return(
-            <li style={{listStyle :'none'}}>
-            <Wrapper>
-            <img style={{ width : '100%',height:'100%' }} src={imgurl} />
+                return(
+                    <li style={{listStyle :'none', margin : '30px 0px'}}>
+                    <Wrapper>
+                        <img style={{ width : '100%',height:'100%' , margin:' 0px 10px'}} src={imgurl} />
+                        <Text style ={{ display : toggleon ? 'none' : 'flex',margin:' 0px 10px', fontSize :'19px'}} >{caption} </Text>
+                    </Wrapper>
+                    
+                    <div className="ui input focus">
+                        <input 
+                        onChange={this.handleChange}
 
-            </Wrapper>
-            <Text
+                        style ={{ display : toggleon ? 'flex' : 'none',
+                        padding: '0px',
+                        fontSize: '20px',
+                        margin: '0 10px'
+                        }}
+                        />
+                    </div>
 
-            >{caption} </Text>
+                    <button className="ui button"
+                    style ={{ display : toggleon ? 'flex' : 'none',margin:'10px'}}
+                    onClick={() => {onSubmitText(this.state.newcaption,toggleon,contid);
+                    this.state.newcaption ='';
+                    }}> Submit </button>
 
-            <input 
-            onChange={this.handleChange}
+                    <button className="ui button"
+                    style ={{ display : toggleon ? 'none' : 'flex',margin:'0 10px'}}
+                    onClick={() => {onEditText(caption,toggleon,contid);
+                    this.state.newcaption ='';
+                    }}> Edit </button>
 
-            style ={{ display : toggleon ? 'flex' : 'none',
-            padding: '0px',
-            fontSize: '20px',
-            margin: '0 10px'
-            }}
-            />
-
-            <button 
-            style ={{ display : toggleon ? 'flex' : 'none',}}
-            onClick={() => {onSubmitText(this.state.newcaption,toggleon,contid);
-            this.state.newcaption ='';
-            }}> Submit </button>
-
-            <button
-            style ={{ display : toggleon ? 'none' : 'flex',}}
-            onClick={() => {onEditText(caption,toggleon,contid);
-            }}> Edit </button>
-
-
-            </li>
-        );
+                    <div> </div>
+                    </li>
+                );
     }
 }
 
