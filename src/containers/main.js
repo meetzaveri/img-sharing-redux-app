@@ -23,8 +23,7 @@ class Main extends React.Component{
                     }}
                     />
                 </div>
-                <button onClick = {() => console.log(store.getState().items)}> arbitrary </button>
-                <button onClick = {() => console.log(store.getState().items.map(t=>t.id))}> id b </button>
+                <button className="ui button" onClick = {() => console.log(store.getState().items)}> arbitrary </button>
             </div>
         );
     }
