@@ -1,5 +1,5 @@
 # redux-instagram
-An Image Sharing App made with Redux and React. Used Redux for maintaining state tree.
+Simple Image Sharing App made with Redux and React. Used Redux for maintaining state tree.
 
 Check the demo here - https://redux-image-app-ngxodurzvr.now.sh/
 
