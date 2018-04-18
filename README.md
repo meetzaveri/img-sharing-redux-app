@@ -1,4 +1,4 @@
-# redux-instagram
+# throw a pic
 Simple Image Sharing App made with Redux and React. Used Redux for maintaining state tree.
 
 ### DEMO - https://redux-image-app-ngxodurzvr.now.sh/
