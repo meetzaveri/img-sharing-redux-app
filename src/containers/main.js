@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import InputElement from './components/addimgcap';
 import DisplayContent from './components/displaycontent';
@@ -10,7 +10,7 @@ class Main extends React.Component{
     render() {
         const {getitems} = this.props;
         return (
-            <div>
+            <Fragment>
                 <InputElement uploadcontent={(url,caption) => {
                     store.dispatch({type:'ADD_IMAGE',id:noteid++,url,caption,toggle:false})
                 }} />
@@ -24,7 +24,7 @@ class Main extends React.Component{
                     />
                 </div>
                 <button className="ui button" onClick = {() => console.log(store.getState().items)}> arbitrary </button>
-            </div>
+            </Fragment>
         );
     }
 }
